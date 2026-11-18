@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro de Cliente</title>
+</head>
+<body>
+  <main>
+    <h1>Cadastro de Cliente</h1>
+    {% if messages %}
+      {% for message in messages %}
+        <p role="status" style="color: green">{{ message }}</p>
+      {% endfor %}
+    {% endif %}
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Salvar</button>
+    </form>
+  </main>
+</body>
+</html>
